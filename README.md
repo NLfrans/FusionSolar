@@ -51,5 +51,3 @@ The script read data from the Huawei FusionSolar Kios API.
         icon_template: 'mdi:solar-panel'
         entity_id: sensor.pv_production_realtime
 ```
-
-```![Screenshot 2020-09-12 at 08.12.02|690x170](upload://pdmUIfJ3L6iT3jZ3aYHyvDPRrta.png)

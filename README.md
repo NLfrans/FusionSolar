@@ -3,6 +3,8 @@
 This file contains a script for Home Assistant.
 The script read data from the Huawei FusionSolar Kios API.
 
+FusionSolar Version 6.0 (till 2021-04-26)
+
 ```
   - platform: rest
     name: pv_production_realtime

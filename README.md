@@ -11,7 +11,7 @@ Please ensure to replace YOURREGION by the region indicated in the kiosk URL (e.
 
 ```
   - platform: command_line  
-    command: curl -s https://YOURREGION.fusionsolar.huawei.com/rest/pvms/web/kiosk/v1/station-kiosk-file?kk=YOURTOKEN | python3 -c 'import json,sys;raw=sys.stdin.read();clean=raw.replace("&quot;",r"\"");obj=json.loads(clean);data_obj=json.loads(obj["data"]);print(data_obj["realKpi"]["realTimePower"]);'
+    command: curl -s https://YOURREGION.fusionsolar.huawei.com/rest/pvms/web/kiosk/v1/station-kiosk-file?kk=YOURTOKEN | python3 -c 'import json,sys;raw=sys.stdin.read();clean=raw.replace("&quot;",r"\"");obj=json.loads(clean);data_obj=json.loads(obj["data"]);print(round(data_obj["realKpi"]["realTimePower"],2));'
     name: solar_real_time
     unit_of_measurement: 'KW'
     scan_interval: 60
@@ -23,19 +23,19 @@ Please ensure to replace YOURREGION by the region indicated in the kiosk URL (e.
     scan_interval: 60
     command_timeout: 30
   - platform: command_line  
-    command: curl -s https://YOURREGION.fusionsolar.huawei.com/rest/pvms/web/kiosk/v1/station-kiosk-file?kk=YOURTOKEN | python3 -c 'import json,sys;raw=sys.stdin.read();clean=raw.replace("&quot;",r"\"");obj=json.loads(clean);data_obj=json.loads(obj["data"]);print(data_obj["realKpi"]["monthEnergy"]);'
+    command: curl -s https://YOURREGION.fusionsolar.huawei.com/rest/pvms/web/kiosk/v1/station-kiosk-file?kk=YOURTOKEN | python3 -c 'import json,sys;raw=sys.stdin.read();clean=raw.replace("&quot;",r"\"");obj=json.loads(clean);data_obj=json.loads(obj["data"]);print(round(data_obj["realKpi"]["monthEnergy"],2));'
     name: solar_month
     unit_of_measurement: 'KW'
     scan_interval: 60
     command_timeout: 30
   - platform: command_line  
-    command: curl -s https://YOURREGION.fusionsolar.huawei.com/rest/pvms/web/kiosk/v1/station-kiosk-file?kk=YOURTOKEN | python3 -c 'import json,sys;raw=sys.stdin.read();clean=raw.replace("&quot;",r"\"");obj=json.loads(clean);data_obj=json.loads(obj["data"]);print(data_obj["realKpi"]["dailyEnergy"]);'
+    command: curl -s https://YOURREGION.fusionsolar.huawei.com/rest/pvms/web/kiosk/v1/station-kiosk-file?kk=YOURTOKEN | python3 -c 'import json,sys;raw=sys.stdin.read();clean=raw.replace("&quot;",r"\"");obj=json.loads(clean);data_obj=json.loads(obj["data"]);print(round(data_obj["realKpi"]["dailyEnergy"],2));'
     name: solar_daily
     unit_of_measurement: 'KW'
     scan_interval: 60
     command_timeout: 30
   - platform: command_line  
-    command: curl -s https://YOURREGION.fusionsolar.huawei.com/rest/pvms/web/kiosk/v1/station-kiosk-file?kk=YOURTOKEN | python3 -c 'import json,sys;raw=sys.stdin.read();clean=raw.replace("&quot;",r"\"");obj=json.loads(clean);data_obj=json.loads(obj["data"]);print(data_obj["realKpi"]["yearEnergy"]);'
+    command: curl -s https://YOURREGION.fusionsolar.huawei.com/rest/pvms/web/kiosk/v1/station-kiosk-file?kk=YOURTOKEN | python3 -c 'import json,sys;raw=sys.stdin.read();clean=raw.replace("&quot;",r"\"");obj=json.loads(clean);data_obj=json.loads(obj["data"]);print(round(data_obj["realKpi"]["yearEnergy"],2));'
     name: solar_year
     unit_of_measurement: 'KW'
     scan_interval: 60
